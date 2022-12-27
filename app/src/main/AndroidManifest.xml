@@ -21,7 +21,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ArtistDetails"
+            android:name=".artistDetails.ArtistDetails"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

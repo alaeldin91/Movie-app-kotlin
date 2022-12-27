@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moviesapp.ArtistDetails
+import com.example.moviesapp.artistDetails.ArtistDetails
 import com.example.moviesapp.adapter.AdapterArtist
 import com.example.moviesapp.databinding.FragmentArtistBinding
 import com.example.moviesapp.model.Artist
@@ -64,9 +64,9 @@ class ArtistFragment : Fragment() {
                 for (item in artistListItem) {
                     viewLifecycleOwner.lifecycleScope.launch {
                         artistViewModel.insertArtist(item)
-
                     }
                 }
+
                 adapterArtist.updateList(artistListItem)
             }
     }
@@ -94,7 +94,9 @@ class ArtistFragment : Fragment() {
     private fun onItemClickArtist() {
         adapterArtist.onItemClick = { artist ->
             Toast.makeText(context, "this is Artist Show ${artist.name}", Toast.LENGTH_LONG).show()
-            startActivity(Intent(activity, ArtistDetails::class.java))
+            val intent = Intent(activity, ArtistDetails::class.java)
+            intent.putExtra("id", artist.id)
+            startActivity(intent)
         }
     }
 

@@ -23,6 +23,7 @@ class ArtistViewModel @Inject constructor(repository: TmdbRepository) : ViewMode
     init {
         this.repository = repository
         this.artistListItemLocal = repository.getLocalArtist()
+
     }
 
      fun getArtist(apikey: String) {

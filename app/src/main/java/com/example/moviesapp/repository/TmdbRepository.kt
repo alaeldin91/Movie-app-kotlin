@@ -75,7 +75,9 @@ class TmdbRepository @Inject constructor(
     fun getLocalTvs(): LiveData<List<TvShow>> {
         return tvDao.getTvList()
     }
-
+     fun getLocalArtistById(id: Int):LiveData<Artist>{
+         return artistDao.getPopularArtist(id)
+     }
     /**
      * getData in Api Using Api Service
      */
@@ -99,4 +101,5 @@ class TmdbRepository @Inject constructor(
     fun getTvShow(apiKey: String): Call<TvShowList> {
         return apiService.getPopularTv(apiKey)
     }
+
 }

@@ -13,5 +13,7 @@ interface ArtistDao {
 
     @Query("SELECT  * FROM popular_artists")
      fun getPopularArtists(): LiveData<List<Artist>>
+     @Query("SELECT * FROM popular_artists where id=:id")
+     fun getPopularArtist(id:Int):LiveData<Artist>
 
 }
