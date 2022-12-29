@@ -7,7 +7,7 @@ import com.example.moviesapp.model.Movie
 import com.example.moviesapp.model.TvShow
 
 
-@Database(entities = [Movie::class,Artist::class,TvShow::class], version = 3, exportSchema = false)
+@Database(entities = [Movie::class,Artist::class,TvShow::class], version = 4, exportSchema = false)
 abstract class MediaDb : RoomDatabase() {
     abstract fun movieDao(): MovieDao
     abstract fun artistDao(): ArtistDao

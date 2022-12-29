@@ -4,8 +4,8 @@
     package="com.example.moviesapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".BaseApplication"
@@ -21,7 +21,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ArtistDetails"
+            android:name=".tvDetails.TvDetails"
+            android:exported="false" />
+        <activity
+            android:name=".movieDetails.MovieDetails"
+            android:exported="false" />
+        <activity
+            android:name=".artistDetails.ArtistDetails"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

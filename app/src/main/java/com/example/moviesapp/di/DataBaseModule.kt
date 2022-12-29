@@ -3,6 +3,7 @@ package com.example.moviesapp.di
 import android.app.Application
 import androidx.room.Room
 import com.example.moviesapp.db.MediaDb
+import com.example.moviesapp.model.Artist
 import com.example.moviesapp.network.ApiService
 import com.example.moviesapp.repository.TmdbRepository
 import dagger.Module
@@ -28,4 +29,7 @@ class DataBaseModule {
     fun provideTmdbRepositry(apiService: ApiService, mediaDb: MediaDb): TmdbRepository {
         return TmdbRepository(apiService, mediaDb.movieDao(), mediaDb.artistDao(), mediaDb.tvDao())
     }
+
+
+
 }

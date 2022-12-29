@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navView: BottomNavigationView = binding.navView
           setSupportActionBar(binding.toolbar)
-        binding.textToolBar.text =getString(R.string.titleArtist)
+        binding.textToolBar.text =getString(R.string.app_name)
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(

@@ -1,6 +1,7 @@
 package com.example.moviesapp.ui.tv
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviesapp.adapter.AdapterTv
 import com.example.moviesapp.databinding.FragmentTvBinding
 import com.example.moviesapp.model.TvShow
+import com.example.moviesapp.tvDetails.TvDetails
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -91,7 +93,9 @@ class TvFragment : Fragment() {
 
     private fun onTvShowClick() {
         adapterTv.onItemClick = { tvShow ->
-            Toast.makeText(context, "this is Tv Show ${tvShow.name}", Toast.LENGTH_LONG).show()
+          val intent =  Intent(activity,TvDetails::class.java)
+            intent.putExtra("tvId",tvShow.id)
+            startActivity(intent)
         }
     }
 
