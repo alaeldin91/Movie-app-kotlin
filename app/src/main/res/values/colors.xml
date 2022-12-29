@@ -6,7 +6,7 @@
     <color name="colorSecondryVariant">#E47C73</color>
     <color name="colorSurface">#006064</color>
     <color name="colorError">#973232</color>
-    <color name="colorBackground">#E1E2E1</color>
+    <color name="colorBackground">#009688</color>
     <color name="colorOnPrimary">#428e92</color>
     <color name="onSecondary">#ff8a80</color>
     <color name="onBackground">#FFF</color>

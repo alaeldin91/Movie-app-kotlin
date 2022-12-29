@@ -8,10 +8,15 @@ import androidx.room.Query
 import com.example.moviesapp.model.Movie
 
 @Dao
- interface MovieDao  {
+interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMovie(movie: Movie)
+
     @Query("SELECT * FROM mediaDb")
-     fun getAllMovies():LiveData<List<Movie>>
+    fun getAllMovies(): LiveData<List<Movie>>
+
+    @Query("SELECT * FROM mediaDb WHERE id =:id")
+    fun getMovieById(id: Int): LiveData<Movie>
+
 
 }

@@ -1,10 +1,12 @@
 package com.example.moviesapp.ui.movie
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviesapp.adapter.AdapterMovie
 import com.example.moviesapp.databinding.FragmentMovieBinding
 import com.example.moviesapp.model.Movie
+import com.example.moviesapp.movieDetails.MovieDetails
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.launch
@@ -85,9 +88,13 @@ class MovieFragment : Fragment() {
         }
     }
 
+    @SuppressLint("LogNotTimber")
     private fun movieOnClick() {
         adapterMovie.onItemClick = { movie ->
-            Toast.makeText(context, "[this is Tv Show ${movie.title}]", Toast.LENGTH_LONG).show()
+            val intent = Intent(activity, MovieDetails::class.java)
+            var movieId = movie.id
+            intent.putExtra("movieId", movieId)
+            startActivity(intent)
 
 
         }

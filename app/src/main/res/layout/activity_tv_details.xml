@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".movieDetails.MovieDetails">
+    tools:context=".tvDetails.TvDetails">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Movie"
+            android:text="Tv"
             android:textColor="#fff"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold">
@@ -50,7 +50,7 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <TextView
-                    android:id="@+id/txtTitle"
+                    android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -59,11 +59,10 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold">
-
                 </TextView>
 
                 <ImageView
-                    android:id="@+id/imageMovie"
+                    android:id="@+id/imageTv"
                     android:layout_width="@dimen/_300sdp"
                     android:layout_height="@dimen/_400sdp"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -78,9 +77,11 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold">
-
                 </TextView>
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
+
     </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

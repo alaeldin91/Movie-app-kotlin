@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moviesapp.artistDetails.ArtistDetails
 import com.example.moviesapp.adapter.AdapterArtist
+import com.example.moviesapp.artistDetails.ArtistDetails
 import com.example.moviesapp.databinding.FragmentArtistBinding
 import com.example.moviesapp.model.Artist
 import dagger.hilt.android.AndroidEntryPoint
@@ -93,7 +92,6 @@ class ArtistFragment : Fragment() {
 
     private fun onItemClickArtist() {
         adapterArtist.onItemClick = { artist ->
-            Toast.makeText(context, "this is Artist Show ${artist.name}", Toast.LENGTH_LONG).show()
             val intent = Intent(activity, ArtistDetails::class.java)
             intent.putExtra("id", artist.id)
             startActivity(intent)

@@ -75,9 +75,19 @@ class TmdbRepository @Inject constructor(
     fun getLocalTvs(): LiveData<List<TvShow>> {
         return tvDao.getTvList()
     }
-     fun getLocalArtistById(id: Int):LiveData<Artist>{
-         return artistDao.getPopularArtist(id)
-     }
+
+    fun getLocalArtistById(id: Int): LiveData<Artist> {
+        return artistDao.getPopularArtist(id)
+    }
+
+    fun getLocalMovieById(id: Int): LiveData<Movie> {
+        return movieDao.getMovieById(id)
+    }
+
+    fun getLocalTvById(id: Int): LiveData<TvShow> {
+        return tvDao.getTvById(id)
+    }
+
     /**
      * getData in Api Using Api Service
      */

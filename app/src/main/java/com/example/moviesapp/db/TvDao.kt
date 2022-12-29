@@ -14,4 +14,7 @@ interface TvDao {
 
     @Query("SELECT * FROM popular_tv")
     fun getTvList(): LiveData<List<TvShow>>
+
+    @Query("SELECT * FROM popular_tv WHERE id=:id")
+    fun getTvById(id: Int): LiveData<TvShow>
 }
